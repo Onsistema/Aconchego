@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Berçário e Brinquedoteca Aconchego | Campinas</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS (CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- GSAP & ScrollTrigger -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        dark: '#050505',
+                        accent: '#D4AF37', // Gold for luxury
+                        soft: '#F5F5F0',
+                    },
+                    fontFamily: {
+                        display: ['Playfair Display', 'serif'],
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #050505;
+            color: #F5F5F0;
+            overflow-x: hidden;
+        }
+
+        .glass {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .text-gradient {
+            background: linear-gradient(to right, #fff, #D4AF37);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .marquee-content {
+            display: flex;
+            animation: marquee 30s linear infinite;
+        }
+
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        .bento-card {
+            transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        .bento-card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(212, 175, 55, 0.3);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        .cta-pulse {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.4); }
+            70% { box-shadow: 0 0 0 20px rgba(212, 175, 55, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0); }
+        }
+
+        /* Hide scrollbar */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #050505;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #333;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #D4AF37;
+        }
+    </style>
+</head>
+<body class="font-sans">
+
+    <!-- HEADER -->
+    <header class="fixed top-0 left-0 w-full z-50 glass py-4 px-6 md:px-12 flex justify-between items-center">
+        <div class="flex items-center gap-2">
+            <span class="font-display text-2xl font-bold tracking-tighter text-accent">ACONCHEGO</span>
+        </div>
+        
+        <nav class="hidden md:flex gap-8 text-sm font-medium uppercase tracking-widest opacity-70">
+            <a href="#diferenciais" class="hover:text-accent transition-colors">Diferenciais</a>
+            <a href="#sobre" class="hover:text-accent transition-colors">Sobre</a>
+            <a href="#depoimentos" class="hover:text-accent transition-colors">Depoimentos</a>
+        </nav>
+
+        <a href="https://wa.me/5519981423373" target="_blank" class="bg-accent text-dark px-6 py-2 rounded-full text-xs font-bold uppercase tracking-widest hover:scale-105 transition-transform">
+            Matrículas Abertas
+        </a>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="relative h-screen flex items-center justify-center overflow-hidden">
+        <!-- Background Image with Overlay -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1587654780291-39c9404d746b?q=80&w=2070&auto=format&fit=crop" 
+                 alt="Nursery environment" 
+                 class="w-full h-full object-cover opacity-40 scale-110" 
+                 id="hero-bg"
+                 referrerPolicy="no-referrer">
+            <div class="absolute inset-0 bg-gradient-to-b from-dark/80 via-dark/40 to-dark"></div>
+        </div>
+
+        <div class="relative z-10 text-center px-6 max-w-5xl">
+            <div class="overflow-hidden mb-4">
+                <span class="hero-reveal block text-accent font-medium uppercase tracking-[0.3em] text-sm">Escola Particular em Campinas</span>
+            </div>
+            <div class="overflow-hidden mb-6">
+                <h1 class="hero-reveal text-5xl md:text-8xl font-display font-bold leading-[0.9] tracking-tighter text-gradient">
+                    Onde o Aconchego <br> Encontra o Futuro.
+                </h1>
+            </div>
+            <div class="overflow-hidden mb-10">
+                <p class="hero-reveal text-lg md:text-xl opacity-60 max-w-2xl mx-auto font-light leading-relaxed">
+                    Mais de 20 anos de experiência dedicados ao cuidado e desenvolvimento das crianças em seus primeiros anos de vida.
+                </p>
+            </div>
+            <div class="hero-reveal flex flex-col md:flex-row gap-4 justify-center items-center">
+                <a href="#contato" class="cta-pulse bg-accent text-dark px-10 py-5 rounded-full text-sm font-bold uppercase tracking-widest hover:scale-105 transition-transform">
+                    Conheça Nossa Escola
+                </a>
+                <span class="text-xs uppercase tracking-widest opacity-40">Vagas Limitadas para 2025</span>
+            </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 opacity-30 animate-bounce">
+            <i data-lucide="chevron-down"></i>
+        </div>
+    </section>
+
+    <!-- AUTHORITY MARQUEE -->
+    <section class="py-12 border-y border-white/5 overflow-hidden bg-white/[0.02]">
+        <div class="marquee-content gap-12 whitespace-nowrap">
+            <!-- Repeat content for seamless loop -->
+            <div class="flex gap-12 items-center">
+                <span class="text-2xl font-display italic opacity-40">20+ Anos de Tradição</span>
+                <div class="w-2 h-2 rounded-full bg-accent"></div>
+                <span class="text-2xl font-display italic opacity-40">Berçário & Brinquedoteca</span>
+                <div class="w-2 h-2 rounded-full bg-accent"></div>
+                <span class="text-2xl font-display italic opacity-40">Balé & Judô</span>
+                <div class="w-2 h-2 rounded-full bg-accent"></div>
+                <span class="text-2xl font-display italic opacity-40">Período Integral</span>
+                <div class="w-2 h-2 rounded-full bg-accent"></div>
+                <span class="text-2xl font-display italic opacity-40">Campinas - SP</span>
+                <div class="w-2 h-2 rounded-full bg-accent"></div>
+            </div>
+            <div class="flex gap-12 items-center">
+                <span class="text-2xl font-display italic opacity-40">20+ Anos de Tradição</span>
+                <div class="w-2 h-2 rounded-full bg-accent"></div>
+                <span class="text-2xl font-display italic opacity-40">Berçário & Brinquedoteca</span>
+                <div class="w-2 h-2 rounded-full bg-accent"></div>
+                <span class="text-2xl font-display italic opacity-40">Balé & Judô</span>
+                <div class="w-2 h-2 rounded-full bg-accent"></div>
+                <span class="text-2xl font-display italic opacity-40">Período Integral</span>
+                <div class="w-2 h-2 rounded-full bg-accent"></div>
+                <span class="text-2xl font-display italic opacity-40">Campinas - SP</span>
+                <div class="w-2 h-2 rounded-full bg-accent"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DIFERENCIAIS (BENTO GRID) -->
+    <section id="diferenciais" class="py-32 px-6 md:px-12 max-w-7xl mx-auto">
+        <div class="mb-20 text-center">
+            <h2 class="section-reveal text-4xl md:text-6xl font-display font-bold mb-6">Excelência em cada detalhe.</h2>
+            <p class="section-reveal opacity-50 max-w-xl mx-auto">Proporcionamos um ambiente acolhedor e seguro para que as crianças possam brincar, aprender e crescer.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-4 md:grid-rows-2 gap-6 h-auto md:h-[800px]">
+            <!-- Card 1: Período Integral -->
+            <div class="section-reveal bento-card md:col-span-2 md:row-span-2 glass rounded-[2rem] p-10 flex flex-col justify-end relative overflow-hidden group">
+                <img src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?q=80&w=1972&auto=format&fit=crop" 
+                     class="absolute inset-0 w-full h-full object-cover opacity-20 group-hover:scale-110 transition-transform duration-700" 
+                     alt="Children playing"
+                     referrerPolicy="no-referrer">
+                <div class="relative z-10">
+                    <div class="w-12 h-12 bg-accent/20 rounded-xl flex items-center justify-center mb-6 text-accent">
+                        <i data-lucide="clock"></i>
+                    </div>
+                    <h3 class="text-3xl font-display font-bold mb-4">Período Integral</h3>
+                    <p class="opacity-60 leading-relaxed">Flexibilidade e segurança para os pais, com uma rotina rica em atividades pedagógicas para os pequenos.</p>
+                </div>
+            </div>
+
+            <!-- Card 2: Balé & Judô -->
+            <div class="section-reveal bento-card md:col-span-2 glass rounded-[2rem] p-10 flex flex-col justify-center relative overflow-hidden group">
+                <div class="flex justify-between items-start relative z-10">
+                    <div>
+                        <h3 class="text-2xl font-display font-bold mb-2">Atividades Extras</h3>
+                        <p class="opacity-60">Balé 🩰 e Judô 🥋 integrados ao currículo.</p>
+                    </div>
+                    <div class="flex gap-2">
+                        <div class="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center text-accent">
+                            <i data-lucide="activity"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 3: Local Adequado -->
+            <div class="section-reveal bento-card glass rounded-[2rem] p-8 flex flex-col justify-between group">
+                <div class="text-accent mb-4">
+                    <i data-lucide="shield-check"></i>
+                </div>
+                <div>
+                    <h3 class="text-xl font-display font-bold mb-2">Ambiente Seguro</h3>
+                    <p class="text-sm opacity-50">Espaço planejado para a segurança e conforto total.</p>
+                </div>
+            </div>
+
+            <!-- Card 4: Experiência -->
+            <div class="section-reveal bento-card glass rounded-[2rem] p-8 flex flex-col justify-between group">
+                <div class="text-accent mb-4">
+                    <i data-lucide="users"></i>
+                </div>
+                <div>
+                    <h3 class="text-xl font-display font-bold mb-2">Equipe Sênior</h3>
+                    <p class="text-sm opacity-50">Profissionais qualificados e amorosos com anos de vivência.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SOBRE / SERVIÇOS -->
+    <section id="sobre" class="py-32 bg-white/[0.01]">
+        <div class="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
+            <div class="relative">
+                <div class="section-reveal aspect-[4/5] rounded-[3rem] overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=2040&auto=format&fit=crop" 
+                         alt="Teacher with child" 
+                         class="w-full h-full object-cover"
+                         referrerPolicy="no-referrer">
+                </div>
+                <!-- Floating Badge -->
+                <div class="section-reveal absolute -bottom-10 -right-10 glass p-8 rounded-3xl hidden md:block">
+                    <span class="block text-4xl font-display font-bold text-accent">20+</span>
+                    <span class="text-xs uppercase tracking-widest opacity-50">Anos de História</span>
+                </div>
+            </div>
+            
+            <div>
+                <span class="section-reveal block text-accent font-medium uppercase tracking-widest text-sm mb-6">Nossa Essência</span>
+                <h2 class="section-reveal text-4xl md:text-6xl font-display font-bold mb-8 leading-tight">Cuidado que acolhe, educação que transforma.</h2>
+                <p class="section-reveal text-lg opacity-60 mb-8 leading-relaxed">
+                    Nosso nome, Berçário e Brinquedoteca Aconchego, reflete nosso compromisso em proporcionar um ambiente acolhedor e seguro para que as crianças possam brincar, aprender e crescer.
+                </p>
+                <ul class="section-reveal space-y-4 mb-12">
+                    <li class="flex items-center gap-4 opacity-80">
+                        <div class="w-6 h-6 rounded-full bg-accent/20 flex items-center justify-center text-accent">
+                            <i data-lucide="check" class="w-4 h-4"></i>
+                        </div>
+                        Desenvolvimento cognitivo e motor
+                    </li>
+                    <li class="flex items-center gap-4 opacity-80">
+                        <div class="w-6 h-6 rounded-full bg-accent/20 flex items-center justify-center text-accent">
+                            <i data-lucide="check" class="w-4 h-4"></i>
+                        </div>
+                        Recursos pedagógicos modernos
+                    </li>
+                    <li class="flex items-center gap-4 opacity-80">
+                        <div class="w-6 h-6 rounded-full bg-accent/20 flex items-center justify-center text-accent">
+                            <i data-lucide="check" class="w-4 h-4"></i>
+                        </div>
+                        Estímulo emocional e social
+                    </li>
+                </ul>
+                <a href="https://wa.me/5519981423373" class="section-reveal inline-block border-b-2 border-accent pb-2 text-sm font-bold uppercase tracking-widest hover:text-accent transition-colors">
+                    Fale com nossa coordenação
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- DEPOIMENTOS -->
+    <section id="depoimentos" class="py-32 px-6 md:px-12 max-w-7xl mx-auto">
+        <div class="text-center mb-20">
+            <h2 class="section-reveal text-4xl md:text-6xl font-display font-bold mb-6">A confiança de quem vive o Aconchego.</h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Testimonial 1 -->
+            <div class="section-reveal glass p-10 rounded-[2.5rem] relative">
+                <div class="text-accent mb-6 flex gap-1">
+                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                </div>
+                <p class="italic opacity-70 mb-8 leading-relaxed">"A melhor escolha que fizemos para o nosso filho. O carinho das tias e a segurança do local nos deixam muito tranquilos."</p>
+                <div class="flex items-center gap-4">
+                    <div class="w-12 h-12 rounded-full bg-white/10"></div>
+                    <div>
+                        <span class="block font-bold">Mariana Silva</span>
+                        <span class="text-xs opacity-40 uppercase tracking-widest">Mãe do Pedro</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Testimonial 2 -->
+            <div class="section-reveal glass p-10 rounded-[2.5rem] border-accent/20">
+                <div class="text-accent mb-6 flex gap-1">
+                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                </div>
+                <p class="italic opacity-70 mb-8 leading-relaxed">"O desenvolvimento da minha filha foi nítido em poucos meses. As atividades de judô e balé são um diferencial incrível."</p>
+                <div class="flex items-center gap-4">
+                    <div class="w-12 h-12 rounded-full bg-white/10"></div>
+                    <div>
+                        <span class="block font-bold">Ricardo Gomes</span>
+                        <span class="text-xs opacity-40 uppercase tracking-widest">Pai da Alice</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Testimonial 3 -->
+            <div class="section-reveal glass p-10 rounded-[2.5rem]">
+                <div class="text-accent mb-6 flex gap-1">
+                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                </div>
+                <p class="italic opacity-70 mb-8 leading-relaxed">"Ambiente extremamente limpo e organizado. Sinto que meu filho está em casa quando o deixo no Aconchego."</p>
+                <div class="flex items-center gap-4">
+                    <div class="w-12 h-12 rounded-full bg-white/10"></div>
+                    <div>
+                        <span class="block font-bold">Carla Mendes</span>
+                        <span class="text-xs opacity-40 uppercase tracking-widest">Mãe do Lucas</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer id="contato" class="py-20 px-6 md:px-12 border-t border-white/5">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 mb-20">
+            <div class="md:col-span-2">
+                <span class="font-display text-3xl font-bold text-accent mb-6 block">ACONCHEGO</span>
+                <p class="opacity-40 max-w-sm leading-relaxed mb-8">
+                    Dedicados ao cuidado e desenvolvimento integral das crianças em Campinas há mais de duas décadas.
+                </p>
+                <div class="flex gap-4">
+                    <a href="#" class="w-10 h-10 rounded-full glass flex items-center justify-center hover:text-accent transition-colors">
+                        <i data-lucide="instagram" class="w-5 h-5"></i>
+                    </a>
+                    <a href="#" class="w-10 h-10 rounded-full glass flex items-center justify-center hover:text-accent transition-colors">
+                        <i data-lucide="facebook" class="w-5 h-5"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div>
+                <span class="block font-bold uppercase tracking-widest text-xs mb-6 opacity-30">Localização</span>
+                <address class="not-italic opacity-60 text-sm leading-loose">
+                    R. Dr. Cassiano Gonzaga, 186<br>
+                    São Bernardo, Campinas - SP<br>
+                    CEP 13030-470
+                </address>
+            </div>
+
+            <div>
+                <span class="block font-bold uppercase tracking-widest text-xs mb-6 opacity-30">Contato</span>
+                <p class="opacity-60 text-sm leading-loose">
+                    (19) 98142-3373<br>
+                    contato@aconchego.com.br
+                </p>
+            </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto flex flex-col md:row justify-between items-center pt-12 border-t border-white/5 gap-6">
+            <p class="text-[10px] uppercase tracking-[0.3em] opacity-30 text-center max-w-4xl mx-auto">
+                &copy; 2026 Berçário e Brinquedoteca Aconchego. Somos uma escolinha com mais de 20 anos de experiência, dedicada ao cuidado e desenvolvimento das crianças em seus primeiros anos de vida. Nosso nome, Berçário e Brinquedoteca Aconchego, reflete nosso compromisso em proporcionar um ambiente acolhedor e seguro para que as crianças possam brincar, aprender e crescer. Em nossa escolinha, oferecemos uma variedade de atividades e recursos pedagógicos que estimulam o desenvolvimento cognitivo, motor e emocional das crianças. Contamos com uma equipe de profissionais qualificados e amorosos, que estão comprometidos em proporcionar o melhor cuidado e educação para cada criança. Venha nos conhecer e descubra por que somos uma escolha confiável para o cuidado e desenvolvimento dos seus filhos. M A T R Í C U L A S A B E R T A S Berçário 🧸 e Brinquedoteca 🛹 em período integral. Balé🩰 Judô 🥋 Local Adequado 😊 Profissionais com Experiência 🥰.
+            </p>
+            <div class="flex gap-8 text-[10px] uppercase tracking-[0.2em] opacity-30">
+                <a href="#" class="hover:text-accent">Privacidade</a>
+                <a href="#" class="hover:text-accent">Termos</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // GSAP Animations
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Hero Entrance
+        const heroTl = gsap.timeline();
+        heroTl.from(".hero-reveal", {
+            y: 100,
+            opacity: 0,
+            duration: 1.2,
+            stagger: 0.2,
+            ease: "power4.out"
+        })
+        .from("#hero-bg", {
+            scale: 1.2,
+            duration: 2,
+            ease: "power2.out"
+        }, 0);
+
+        // Section Reveals
+        const sections = document.querySelectorAll(".section-reveal");
+        sections.forEach(section => {
+            gsap.from(section, {
+                scrollTrigger: {
+                    trigger: section,
+                    start: "top 85%",
+                    toggleActions: "play none none none"
+                },
+                y: 50,
+                opacity: 0,
+                duration: 1,
+                ease: "power3.out"
+            });
+        });
+
+        // Parallax Effect on Hero Background
+        gsap.to("#hero-bg", {
+            scrollTrigger: {
+                trigger: "section",
+                start: "top top",
+                end: "bottom top",
+                scrub: true
+            },
+            y: 200
+        });
+
+        // Smooth Scroll for Nav Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
