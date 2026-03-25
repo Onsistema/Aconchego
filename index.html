@@ -59,7 +59,7 @@
 
         .marquee-content {
             display: flex;
-            animation: marquee 30s linear infinite;
+            animation: marquee 10s linear infinite;
         }
 
         @keyframes marquee {
@@ -117,6 +117,7 @@
         <nav class="hidden md:flex gap-8 text-sm font-medium uppercase tracking-widest opacity-70">
             <a href="#diferenciais" class="hover:text-accent transition-colors">Diferenciais</a>
             <a href="#sobre" class="hover:text-accent transition-colors">Sobre</a>
+            <a href="#galeria" class="hover:text-accent transition-colors">Galeria</a>
             <a href="#depoimentos" class="hover:text-accent transition-colors">Depoimentos</a>
         </nav>
 
@@ -308,6 +309,76 @@
         </div>
     </section>
 
+    <!-- GALERIA INTERATIVA -->
+    <section id="galeria" class="py-32 px-6 md:px-12 max-w-7xl mx-auto">
+        <div class="text-center mb-16">
+            <span class="section-reveal block text-accent font-medium uppercase tracking-widest text-sm mb-4">Nossos Espaços</span>
+            <h2 class="section-reveal text-4xl md:text-6xl font-display font-bold mb-8">Um tour pelo Aconchego.</h2>
+            
+            <!-- Filtros -->
+            <div class="section-reveal flex flex-wrap justify-center gap-4 mt-8">
+                <button class="filter-btn active px-6 py-2 rounded-full border border-white/10 text-xs font-bold uppercase tracking-widest hover:border-accent transition-all" data-filter="all">Todos</button>
+                <button class="filter-btn px-6 py-2 rounded-full border border-white/10 text-xs font-bold uppercase tracking-widest hover:border-accent transition-all" data-filter="nursery">Berçário</button>
+                <button class="filter-btn px-6 py-2 rounded-full border border-white/10 text-xs font-bold uppercase tracking-widest hover:border-accent transition-all" data-filter="playroom">Brinquedoteca</button>
+                <button class="filter-btn px-6 py-2 rounded-full border border-white/10 text-xs font-bold uppercase tracking-widest hover:border-accent transition-all" data-filter="classes">Aulas</button>
+            </div>
+        </div>
+
+        <div class="gallery-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Nursery -->
+            <div class="gallery-item nursery section-reveal group cursor-pointer relative aspect-square rounded-[2rem] overflow-hidden glass" onclick="openLightbox(this)">
+                <img src="https://images.unsplash.com/photo-1596464716127-f2a82984de30?q=80&w=2070&auto=format&fit=crop" alt="Berçário aconchegante" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" referrerPolicy="no-referrer">
+                <div class="absolute inset-0 bg-dark/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                    <i data-lucide="maximize-2" class="text-accent w-8 h-8"></i>
+                </div>
+            </div>
+            <div class="gallery-item nursery section-reveal group cursor-pointer relative aspect-square rounded-[2rem] overflow-hidden glass" onclick="openLightbox(this)">
+                <img src="https://images.unsplash.com/photo-1566004113932-378f9fa2c4fc?q=80&w=2070&auto=format&fit=crop" alt="Cuidado no berçário" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" referrerPolicy="no-referrer">
+                <div class="absolute inset-0 bg-dark/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                    <i data-lucide="maximize-2" class="text-accent w-8 h-8"></i>
+                </div>
+            </div>
+
+            <!-- Playroom -->
+            <div class="gallery-item playroom section-reveal group cursor-pointer relative aspect-square rounded-[2rem] overflow-hidden glass" onclick="openLightbox(this)">
+                <img src="https://images.unsplash.com/photo-1516627145497-ae6968895b74?q=80&w=2040&auto=format&fit=crop" alt="Brinquedoteca colorida" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" referrerPolicy="no-referrer">
+                <div class="absolute inset-0 bg-dark/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                    <i data-lucide="maximize-2" class="text-accent w-8 h-8"></i>
+                </div>
+            </div>
+            <div class="gallery-item playroom section-reveal group cursor-pointer relative aspect-square rounded-[2rem] overflow-hidden glass" onclick="openLightbox(this)">
+                <img src="https://images.unsplash.com/photo-1597510333560-4233bc5f6de9?q=80&w=2070&auto=format&fit=crop" alt="Atividades lúdicas" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" referrerPolicy="no-referrer">
+                <div class="absolute inset-0 bg-dark/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                    <i data-lucide="maximize-2" class="text-accent w-8 h-8"></i>
+                </div>
+            </div>
+
+            <!-- Classes -->
+            <div class="gallery-item classes section-reveal group cursor-pointer relative aspect-square rounded-[2rem] overflow-hidden glass" onclick="openLightbox(this)">
+                <img src="https://images.unsplash.com/photo-1519340241574-2dec499b632b?q=80&w=2070&auto=format&fit=crop" alt="Aula de Judô" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" referrerPolicy="no-referrer">
+                <div class="absolute inset-0 bg-dark/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                    <i data-lucide="maximize-2" class="text-accent w-8 h-8"></i>
+                </div>
+            </div>
+            <div class="gallery-item classes section-reveal group cursor-pointer relative aspect-square rounded-[2rem] overflow-hidden glass" onclick="openLightbox(this)">
+                <img src="https://images.unsplash.com/photo-1518834107812-67b0b7c58434?q=80&w=1935&auto=format&fit=crop" alt="Aula de Balé" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" referrerPolicy="no-referrer">
+                <div class="absolute inset-0 bg-dark/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                    <i data-lucide="maximize-2" class="text-accent w-8 h-8"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LIGHTBOX MODAL -->
+    <div id="lightbox" class="fixed inset-0 z-[100] bg-dark/95 hidden items-center justify-center p-6 backdrop-blur-xl">
+        <button class="absolute top-10 right-10 text-white/50 hover:text-accent transition-colors" onclick="closeLightbox()">
+            <i data-lucide="x" class="w-10 h-10"></i>
+        </button>
+        <div class="max-w-5xl w-full h-full flex items-center justify-center">
+            <img id="lightbox-img" src="" alt="Full view" class="max-w-full max-h-full object-contain rounded-2xl shadow-2xl" referrerPolicy="no-referrer">
+        </div>
+    </div>
+
     <!-- DEPOIMENTOS -->
     <section id="depoimentos" class="py-32 px-6 md:px-12 max-w-7xl mx-auto">
         <div class="text-center mb-20">
@@ -481,6 +552,76 @@
                     behavior: 'smooth'
                 });
             });
+        });
+
+        // Gallery Filtering
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const galleryItems = document.querySelectorAll('.gallery-item');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Update active button
+                filterBtns.forEach(b => b.classList.remove('active', 'bg-accent', 'text-dark'));
+                btn.classList.add('active');
+                if (btn.dataset.filter !== 'all') {
+                    btn.classList.add('bg-accent', 'text-dark');
+                }
+
+                const filter = btn.dataset.filter;
+
+                galleryItems.forEach(item => {
+                    if (filter === 'all' || item.classList.contains(filter)) {
+                        gsap.to(item, {
+                            scale: 1,
+                            opacity: 1,
+                            duration: 0.5,
+                            display: 'block',
+                            ease: 'power2.out'
+                        });
+                    } else {
+                        gsap.to(item, {
+                            scale: 0.8,
+                            opacity: 0,
+                            duration: 0.5,
+                            display: 'none',
+                            ease: 'power2.in'
+                        });
+                    }
+                });
+            });
+        });
+
+        // Lightbox Logic
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+
+        window.openLightbox = (element) => {
+            const imgSrc = element.querySelector('img').src;
+            lightboxImg.src = imgSrc;
+            lightbox.classList.remove('hidden');
+            lightbox.classList.add('flex');
+            
+            gsap.fromTo(lightbox, { opacity: 0 }, { opacity: 1, duration: 0.3 });
+            gsap.fromTo(lightboxImg, { scale: 0.8, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.5, delay: 0.1, ease: 'back.out(1.7)' });
+            
+            document.body.style.overflow = 'hidden'; // Prevent scroll
+        };
+
+        window.closeLightbox = () => {
+            gsap.to(lightbox, { 
+                opacity: 0, 
+                duration: 0.3, 
+                onComplete: () => {
+                    lightbox.classList.add('hidden');
+                    lightbox.classList.remove('flex');
+                    document.body.style.overflow = '';
+                } 
+            });
+        };
+
+        // Close lightbox on background click
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) closeLightbox();
         });
     </script>
 </body>
