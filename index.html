@@ -25,9 +25,9 @@
             theme: {
                 extend: {
                     colors: {
-                        dark: '#050505',
-                        accent: '#D4AF37', // Gold for luxury
-                        soft: '#F5F5F0',
+                        dark: '#1E1B4B', // Deep Indigo for text
+                        accent: '#4338CA', // Royal Blue / Indigo 700
+                        soft: '#EEF2FF', // Light Blue / Indigo 50
                     },
                     fontFamily: {
                         display: ['Playfair Display', 'serif'],
@@ -40,19 +40,19 @@
 
     <style>
         body {
-            background-color: #050505;
-            color: #F5F5F0;
+            background-color: #EEF2FF;
+            color: #1E1B4B;
             overflow-x: hidden;
         }
 
         .glass {
-            background: rgba(255, 255, 255, 0.03);
+            background: rgba(255, 255, 255, 0.6);
             backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(30, 27, 75, 0.05);
         }
 
         .text-gradient {
-            background: linear-gradient(to right, #fff, #D4AF37);
+            background: linear-gradient(to right, #1E1B4B, #4338CA);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
@@ -79,8 +79,8 @@
 
         .bento-card:hover {
             transform: translateY(-10px);
-            border-color: rgba(212, 175, 55, 0.3);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            border-color: rgba(67, 56, 202, 0.3);
+            box-shadow: 0 20px 40px rgba(30, 27, 75, 0.1);
         }
 
         .cta-pulse {
@@ -88,9 +88,9 @@
         }
 
         @keyframes pulse {
-            0% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.4); }
-            70% { box-shadow: 0 0 0 20px rgba(212, 175, 55, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0); }
+            0% { box-shadow: 0 0 0 0 rgba(67, 56, 202, 0.4); }
+            70% { box-shadow: 0 0 0 20px rgba(67, 56, 202, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(67, 56, 202, 0); }
         }
 
         /* Hide scrollbar */
@@ -98,25 +98,25 @@
             width: 6px;
         }
         ::-webkit-scrollbar-track {
-            background: #050505;
+            background: #EEF2FF;
         }
         ::-webkit-scrollbar-thumb {
-            background: #333;
+            background: #C7D2FE;
             border-radius: 10px;
         }
         ::-webkit-scrollbar-thumb:hover {
-            background: #D4AF37;
+            background: #4338CA;
         }
     </style>
 </head>
 <body class="font-sans">
 
     <!-- HEADER -->
-    <header class="fixed top-0 left-0 w-full z-50 glass py-4 px-6 md:px-12 flex justify-between items-center">
-        <div class="flex items-center gap-2">
-            <img src="https://lh3.googleusercontent.com/d/1bYdSR6v9P4AMXvxvCTMVgoHT1CxoswEb" 
+    <header class="fixed top-0 left-0 w-full z-50 glass py-0.5 px-6 md:px-12 flex justify-between items-center h-16 md:h-20">
+        <div class="flex items-center h-full py-1">
+            <img src="https://lh3.googleusercontent.com/d/1l8SuvmZmfiEp9BUD247PhYOUEb00HXhh" 
                  alt="Berçário e Brinquedoteca Aconchego Logo" 
-                 class="h-10 md:h-12 w-auto object-contain"
+                 class="h-full w-auto object-contain"
                  referrerPolicy="no-referrer">
         </div>
         
@@ -127,77 +127,76 @@
             <a href="#depoimentos" class="hover:text-accent transition-colors">Depoimentos</a>
         </nav>
 
-        <a href="https://wa.me/5519981423373" target="_blank" class="bg-accent text-dark px-6 py-2 rounded-full text-xs font-bold uppercase tracking-widest hover:scale-105 transition-transform">
+        <a href="https://wa.me/5519981423373" target="_blank" class="bg-accent text-white px-6 py-2 rounded-full text-xs font-bold uppercase tracking-widest hover:scale-105 transition-transform">
             Matrículas Abertas
         </a>
     </header>
 
     <!-- HERO SECTION -->
-    <section class="relative h-screen flex items-center justify-center overflow-hidden">
+    <section class="relative min-h-screen flex items-center justify-center overflow-hidden pt-16 md:pt-20 pb-10">
         <!-- Background Image with Overlay -->
         <div class="absolute inset-0 z-0">
             <img src="https://images.unsplash.com/photo-1587654780291-39c9404d746b?q=80&w=2070&auto=format&fit=crop" 
                  alt="Nursery environment" 
-                 class="w-full h-full object-cover opacity-40 scale-110" 
+                 class="w-full h-full object-cover opacity-20 scale-110" 
                  id="hero-bg"
                  referrerPolicy="no-referrer">
-            <div class="absolute inset-0 bg-gradient-to-b from-dark/80 via-dark/40 to-dark"></div>
+            <div class="absolute inset-0 bg-gradient-to-b from-soft/80 via-soft/40 to-soft"></div>
         </div>
 
         <div class="relative z-10 text-center px-6 max-w-5xl">
-            <div class="overflow-hidden mb-4">
-                <span class="hero-reveal block text-accent font-medium uppercase tracking-[0.3em] text-sm">Escola Particular em Campinas</span>
+            <div class="overflow-hidden mb-2">
+                <span class="hero-reveal block text-accent font-medium uppercase tracking-[0.3em] text-[10px] md:text-xs">Escola Particular em Campinas</span>
             </div>
-            <div class="overflow-hidden mb-6">
-                <h1 class="hero-reveal text-5xl md:text-8xl font-display font-bold leading-[0.9] tracking-tighter text-gradient">
-                    Onde o Aconchego <br> Encontra o Futuro.
+            <div class="overflow-hidden mb-4">
+                <h1 class="hero-reveal text-4xl md:text-6xl font-display font-bold leading-[0.9] tracking-tighter text-gradient">
+                    Segurança.<br>
+                    Carinho.<br>
+                    Acolhimento.
                 </h1>
             </div>
-            <div class="overflow-hidden mb-10">
-                <p class="hero-reveal text-lg md:text-xl opacity-60 max-w-2xl mx-auto font-light leading-relaxed">
-                    Mais de 20 anos de experiência dedicados ao cuidado e desenvolvimento das crianças em seus primeiros anos de vida.
+            <div class="overflow-hidden mb-6">
+                <p class="hero-reveal text-base md:text-lg opacity-60 max-w-2xl mx-auto font-light leading-relaxed">
+                    Um ambiente planejado para o desenvolvimento do seu filho desde os primeiros meses, com atenção individualizada, rotina estruturada e todo o amor que ele precisa para crescer feliz.
                 </p>
             </div>
-            <div class="hero-reveal flex flex-col md:flex-row gap-4 justify-center items-center">
-                <a href="#contato" class="cta-pulse bg-accent text-dark px-10 py-5 rounded-full text-sm font-bold uppercase tracking-widest hover:scale-105 transition-transform">
-                    Conheça Nossa Escola
+            <div class="hero-reveal flex flex-col md:flex-row gap-4 justify-center items-center mb-4">
+                <a href="https://wa.me/5519981423373" target="_blank" class="cta-pulse bg-accent text-white px-10 py-5 rounded-full text-sm font-bold uppercase tracking-widest hover:scale-105 transition-transform">
+                    Agendar visita pelo WhatsApp
                 </a>
-                <span class="text-xs uppercase tracking-widest opacity-40">Vagas Limitadas para 2026</span>
+                <span class="text-xs uppercase tracking-widest opacity-40">Vagas Limitadas para 2026 em Campinas</span>
             </div>
         </div>
 
-        <!-- Scroll Indicator -->
-        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 opacity-30 animate-bounce">
-            <i data-lucide="chevron-down"></i>
-        </div>
+        <!-- Scroll Indicator Removed for better spacing -->
     </section>
 
     <!-- AUTHORITY MARQUEE -->
-    <section class="py-12 border-y border-white/5 overflow-hidden bg-white/[0.02]">
+    <section class="py-12 border-y border-dark/5 overflow-hidden bg-dark/[0.02]">
         <div class="marquee-content gap-12 whitespace-nowrap">
             <!-- Repeat content for seamless loop -->
             <div class="flex gap-12 items-center">
-                <span class="text-2xl font-display italic opacity-40">20+ Anos de Tradição</span>
+                <span class="text-2xl font-display italic opacity-40 text-dark">20+ Anos de Tradição</span>
                 <div class="w-2 h-2 rounded-full bg-accent"></div>
-                <span class="text-2xl font-display italic opacity-40">Berçário & Brinquedoteca</span>
+                <span class="text-2xl font-display italic opacity-40 text-dark">Berçário & Brinquedoteca</span>
                 <div class="w-2 h-2 rounded-full bg-accent"></div>
-                <span class="text-2xl font-display italic opacity-40">Balé & Judô</span>
+                <span class="text-2xl font-display italic opacity-40 text-dark">Balé & Judô</span>
                 <div class="w-2 h-2 rounded-full bg-accent"></div>
-                <span class="text-2xl font-display italic opacity-40">Período Integral</span>
+                <span class="text-2xl font-display italic opacity-40 text-dark">Período Integral</span>
                 <div class="w-2 h-2 rounded-full bg-accent"></div>
-                <span class="text-2xl font-display italic opacity-40">Campinas - SP</span>
+                <span class="text-2xl font-display italic opacity-40 text-dark">Campinas - SP</span>
                 <div class="w-2 h-2 rounded-full bg-accent"></div>
             </div>
             <div class="flex gap-12 items-center">
-                <span class="text-2xl font-display italic opacity-40">20+ Anos de Tradição</span>
+                <span class="text-2xl font-display italic opacity-40 text-dark">20+ Anos de Tradição</span>
                 <div class="w-2 h-2 rounded-full bg-accent"></div>
-                <span class="text-2xl font-display italic opacity-40">Berçário & Brinquedoteca</span>
+                <span class="text-2xl font-display italic opacity-40 text-dark">Berçário & Brinquedoteca</span>
                 <div class="w-2 h-2 rounded-full bg-accent"></div>
-                <span class="text-2xl font-display italic opacity-40">Balé & Judô</span>
+                <span class="text-2xl font-display italic opacity-40 text-dark">Balé & Judô</span>
                 <div class="w-2 h-2 rounded-full bg-accent"></div>
-                <span class="text-2xl font-display italic opacity-40">Período Integral</span>
+                <span class="text-2xl font-display italic opacity-40 text-dark">Período Integral</span>
                 <div class="w-2 h-2 rounded-full bg-accent"></div>
-                <span class="text-2xl font-display italic opacity-40">Campinas - SP</span>
+                <span class="text-2xl font-display italic opacity-40 text-dark">Campinas - SP</span>
                 <div class="w-2 h-2 rounded-full bg-accent"></div>
             </div>
         </div>
@@ -206,60 +205,60 @@
     <!-- DIFERENCIAIS (BENTO GRID) -->
     <section id="diferenciais" class="py-32 px-6 md:px-12 max-w-7xl mx-auto">
         <div class="mb-20 text-center">
-            <h2 class="section-reveal text-4xl md:text-6xl font-display font-bold mb-6">Excelência em cada detalhe.</h2>
-            <p class="section-reveal opacity-50 max-w-xl mx-auto">Proporcionamos um ambiente acolhedor e seguro para que as crianças possam brincar, aprender e crescer.</p>
+            <h2 class="section-reveal text-4xl md:text-6xl font-display font-bold mb-6">Cuidado real em cada detalhe.</h2>
+            <p class="section-reveal opacity-50 max-w-xl mx-auto">No Aconchego, cuidamos de crianças a partir dos 6 meses até a fase pré-escolar, oferecendo um refúgio seguro e estimulante para cada etapa dessa jornada. Somos a referência para famílias que buscam um berçário em Campinas comprometido com o bem-estar real.</p>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-4 md:grid-rows-2 gap-6 h-auto md:h-[800px]">
-            <!-- Card 1: Período Integral -->
+            <!-- Card 1: Cuidado Individual -->
             <div class="section-reveal bento-card md:col-span-2 md:row-span-2 glass rounded-[2rem] p-10 flex flex-col justify-end relative overflow-hidden group">
                 <img src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?q=80&w=1972&auto=format&fit=crop" 
                      class="absolute inset-0 w-full h-full object-cover opacity-20 group-hover:scale-110 transition-transform duration-700" 
-                     alt="Children playing"
+                     alt="Cuidado individualizado"
                      referrerPolicy="no-referrer">
                 <div class="relative z-10">
                     <div class="w-12 h-12 bg-accent/20 rounded-xl flex items-center justify-center mb-6 text-accent">
-                        <i data-lucide="clock"></i>
+                        <i data-lucide="heart"></i>
                     </div>
-                    <h3 class="text-3xl font-display font-bold mb-4">Período Integral</h3>
-                    <p class="opacity-60 leading-relaxed">Flexibilidade e segurança para os pais, com uma rotina rica em atividades pedagógicas para os pequenos.</p>
+                    <h3 class="text-3xl font-display font-bold mb-4">Cuidado individual de verdade</h3>
+                    <p class="opacity-60 leading-relaxed">Cada criança é acompanhada com um olhar atento e carinhoso, respeitando seu tempo, suas necessidades e sua rotina única.</p>
                 </div>
             </div>
 
-            <!-- Card 2: Balé & Judô -->
+            <!-- Card 2: Descanso -->
             <div class="section-reveal bento-card md:col-span-2 glass rounded-[2rem] p-10 flex flex-col justify-center relative overflow-hidden group">
                 <div class="flex justify-between items-start relative z-10">
                     <div>
-                        <h3 class="text-2xl font-display font-bold mb-2">Atividades Extras</h3>
-                        <p class="opacity-60">Balé 🩰 e Judô 🥋 integrados ao currículo.</p>
+                        <h3 class="text-2xl font-display font-bold mb-2">Descanso adequado e seguro</h3>
+                        <p class="opacity-60">Aqui, o sono é sagrado. Utilizamos caminhas apropriadas que garantem conforto e segurança total — sem improvisos.</p>
                     </div>
                     <div class="flex gap-2">
-                        <div class="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center text-accent">
-                            <i data-lucide="activity"></i>
+                        <div class="w-10 h-10 bg-dark/5 rounded-full flex items-center justify-center text-accent">
+                            <i data-lucide="moon"></i>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Card 3: Local Adequado -->
+            <!-- Card 3: Alimentação -->
             <div class="section-reveal bento-card glass rounded-[2rem] p-8 flex flex-col justify-between group">
                 <div class="text-accent mb-4">
-                    <i data-lucide="shield-check"></i>
+                    <i data-lucide="apple"></i>
                 </div>
                 <div>
-                    <h3 class="text-xl font-display font-bold mb-2">Ambiente Seguro</h3>
-                    <p class="text-sm opacity-50">Espaço planejado para a segurança e conforto total.</p>
+                    <h3 class="text-xl font-display font-bold mb-2">Alimentação Saudável</h3>
+                    <p class="text-sm opacity-50">Refeições variadas e nutritivas para fortalecer o desenvolvimento.</p>
                 </div>
             </div>
 
-            <!-- Card 4: Experiência -->
+            <!-- Card 4: Turmas Reduzidas -->
             <div class="section-reveal bento-card glass rounded-[2rem] p-8 flex flex-col justify-between group">
                 <div class="text-accent mb-4">
                     <i data-lucide="users"></i>
                 </div>
                 <div>
-                    <h3 class="text-xl font-display font-bold mb-2">Equipe Sênior</h3>
-                    <p class="text-sm opacity-50">Profissionais qualificados e amorosos com anos de vivência.</p>
+                    <h3 class="text-xl font-display font-bold mb-2">Turmas Reduzidas</h3>
+                    <p class="text-sm opacity-50">Mais atenção, mais segurança e um olhar muito mais próximo.</p>
                 </div>
             </div>
         </div>
@@ -284,32 +283,32 @@
             
             <div>
                 <span class="section-reveal block text-accent font-medium uppercase tracking-widest text-sm mb-6">Nossa Essência</span>
-                <h2 class="section-reveal text-4xl md:text-6xl font-display font-bold mb-8 leading-tight">Cuidado que acolhe, educação que transforma.</h2>
+                <h2 class="section-reveal text-4xl md:text-6xl font-display font-bold mb-8 leading-tight">Mais do que uma escola, uma extensão do seu lar.</h2>
                 <p class="section-reveal text-lg opacity-60 mb-8 leading-relaxed">
-                    Nosso nome, Berçário e Brinquedoteca Aconchego, reflete nosso compromisso em proporcionar um ambiente acolhedor e seguro para que as crianças possam brincar, aprender e crescer.
+                    No Aconchego, cada criança é vista e valorizada em sua essência, com uma rotina desenhada para florescer o bem-estar e a convivência. Nosso compromisso é entregar a paz de espírito que os pais precisam e a infância segura e feliz que os filhos merecem.
                 </p>
                 <ul class="section-reveal space-y-4 mb-12">
                     <li class="flex items-center gap-4 opacity-80">
                         <div class="w-6 h-6 rounded-full bg-accent/20 flex items-center justify-center text-accent">
                             <i data-lucide="check" class="w-4 h-4"></i>
                         </div>
-                        Desenvolvimento cognitivo e motor
+                        Desenvolvimento que respeita o tempo de cada criança
                     </li>
                     <li class="flex items-center gap-4 opacity-80">
                         <div class="w-6 h-6 rounded-full bg-accent/20 flex items-center justify-center text-accent">
                             <i data-lucide="check" class="w-4 h-4"></i>
                         </div>
-                        Recursos pedagógicos modernos
+                        Ambiente que abraça e acolhe com afeto genuíno
                     </li>
                     <li class="flex items-center gap-4 opacity-80">
                         <div class="w-6 h-6 rounded-full bg-accent/20 flex items-center justify-center text-accent">
                             <i data-lucide="check" class="w-4 h-4"></i>
                         </div>
-                        Estímulo emocional e social
+                        Tranquilidade total para pais que trabalham
                     </li>
                 </ul>
-                <a href="https://wa.me/5519981423373" class="section-reveal inline-block border-b-2 border-accent pb-2 text-sm font-bold uppercase tracking-widest hover:text-accent transition-colors">
-                    Fale com nossa coordenação
+                <a href="https://wa.me/5519981423373" target="_blank" class="section-reveal inline-block border-b-2 border-accent pb-2 text-sm font-bold uppercase tracking-widest hover:text-accent transition-colors">
+                    Fale com nossa coordenação no WhatsApp
                 </a>
             </div>
         </div>
@@ -376,7 +375,7 @@
     </section>
 
     <!-- LIGHTBOX MODAL -->
-    <div id="lightbox" class="fixed inset-0 z-[100] bg-dark/95 hidden items-center justify-center p-6 backdrop-blur-xl">
+    <div id="lightbox" class="fixed inset-0 z-[100] bg-dark/90 hidden items-center justify-center p-6 backdrop-blur-xl">
         <button class="absolute top-10 right-10 text-white/50 hover:text-accent transition-colors" onclick="closeLightbox()">
             <i data-lucide="x" class="w-10 h-10"></i>
         </button>
@@ -401,9 +400,9 @@
                     <i data-lucide="star" class="w-4 h-4 fill-current"></i>
                     <i data-lucide="star" class="w-4 h-4 fill-current"></i>
                 </div>
-                <p class="italic opacity-70 mb-8 leading-relaxed">"A melhor escolha que fizemos para o nosso filho. O carinho das tias e a segurança do local nos deixam muito tranquilos."</p>
+                <p class="italic opacity-70 mb-8 leading-relaxed">"Foi a decisão mais tranquila que tomamos. Sentimos a segurança e o carinho das tias desde o primeiro minuto. É um alívio trabalhar sabendo que ele está bem."</p>
                 <div class="flex items-center gap-4">
-                    <div class="w-12 h-12 rounded-full bg-white/10"></div>
+                    <div class="w-12 h-12 rounded-full bg-dark/10"></div>
                     <div>
                         <span class="block font-bold">Mariana Silva</span>
                         <span class="text-xs opacity-40 uppercase tracking-widest">Mãe do Pedro</span>
@@ -420,9 +419,9 @@
                     <i data-lucide="star" class="w-4 h-4 fill-current"></i>
                     <i data-lucide="star" class="w-4 h-4 fill-current"></i>
                 </div>
-                <p class="italic opacity-70 mb-8 leading-relaxed">"O desenvolvimento da minha filha foi nítido em poucos meses. As atividades de judô e balé são um diferencial incrível."</p>
+                <p class="italic opacity-70 mb-8 leading-relaxed">"A adaptação foi surpreendente. O cuidado individualizado e o afeto genuíno fazem toda a diferença no brilho dos olhos dela ao chegar na escola."</p>
                 <div class="flex items-center gap-4">
-                    <div class="w-12 h-12 rounded-full bg-white/10"></div>
+                    <div class="w-12 h-12 rounded-full bg-dark/10"></div>
                     <div>
                         <span class="block font-bold">Ricardo Gomes</span>
                         <span class="text-xs opacity-40 uppercase tracking-widest">Pai da Alice</span>
@@ -439,9 +438,9 @@
                     <i data-lucide="star" class="w-4 h-4 fill-current"></i>
                     <i data-lucide="star" class="w-4 h-4 fill-current"></i>
                 </div>
-                <p class="italic opacity-70 mb-8 leading-relaxed">"Ambiente extremamente limpo e organizado. Sinto que meu filho está em casa quando o deixo no Aconchego."</p>
+                <p class="italic opacity-70 mb-8 leading-relaxed">"O ambiente é impecável, organizado e transmite uma paz enorme. Deixar meu filho no Aconchego é ter a certeza de que ele está em boas mãos."</p>
                 <div class="flex items-center gap-4">
-                    <div class="w-12 h-12 rounded-full bg-white/10"></div>
+                    <div class="w-12 h-12 rounded-full bg-dark/10"></div>
                     <div>
                         <span class="block font-bold">Carla Mendes</span>
                         <span class="text-xs opacity-40 uppercase tracking-widest">Mãe do Lucas</span>
@@ -451,11 +450,22 @@
         </div>
     </section>
 
+    <!-- FINAL CTA -->
+    <section class="py-32 px-6 text-center bg-accent/5">
+        <div class="max-w-3xl mx-auto">
+            <h2 class="section-reveal text-4xl md:text-6xl font-display font-bold mb-8">Venha sentir o carinho que preparamos para o seu filho.</h2>
+            <p class="section-reveal text-lg opacity-60 mb-12">Agende sua visita agora e descubra como nossa rotina e estrutura podem transformar o dia a dia da sua família.</p>
+            <a href="https://wa.me/5519981423373" target="_blank" class="section-reveal cta-pulse bg-accent text-white px-12 py-6 rounded-full text-sm font-bold uppercase tracking-widest hover:scale-105 transition-transform inline-block">
+                Falar no WhatsApp
+            </a>
+        </div>
+    </section>
+
     <!-- FOOTER -->
-    <footer id="contato" class="py-20 px-6 md:px-12 border-t border-white/5">
+    <footer id="contato" class="py-20 px-6 md:px-12 border-t border-dark/5">
         <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 mb-20">
             <div class="md:col-span-2">
-                <img src="https://lh3.googleusercontent.com/d/1bYdSR6v9P4AMXvxvCTMVgoHT1CxoswEb" 
+                <img src="https://lh3.googleusercontent.com/d/1l8SuvmZmfiEp9BUD247PhYOUEb00HXhh" 
                      alt="Berçário e Brinquedoteca Aconchego Logo" 
                      class="h-16 md:h-20 w-auto object-contain mb-6 block"
                      referrerPolicy="no-referrer">
@@ -473,8 +483,9 @@
             </div>
 
             <div>
-                <span class="block font-bold uppercase tracking-widest text-xs mb-6 opacity-30">Localização</span>
+                <span class="block font-bold uppercase tracking-widest text-xs mb-6 opacity-30">Localização em Campinas</span>
                 <address class="not-italic opacity-60 text-sm leading-loose">
+                    Estamos de portas abertas para famílias de Campinas e região. Localizados estrategicamente para oferecer praticidade e a segurança que sua rotina exige, sem abrir mão do silêncio e do acolhimento.<br><br>
                     R. Dr. Cassiano Gonzaga, 186<br>
                     São Bernardo, Campinas - SP<br>
                     CEP 13030-470
@@ -490,8 +501,8 @@
             </div>
         </div>
 
-        <div class="max-w-7xl mx-auto flex flex-col md:row justify-between items-center pt-12 border-t border-white/5 gap-6">
-            <p class="text-[10px] uppercase tracking-[0.3em] opacity-30 text-center max-w-4xl mx-auto">
+        <div class="max-w-7xl mx-auto flex flex-col md:row justify-between items-center pt-12 border-t border-dark/5 gap-6">
+            <p class="text-[10px] uppercase tracking-[0.3em] opacity-30 text-center max-w-4xl mx-auto text-dark">
                 &copy; 2026 Berçário e Brinquedoteca Aconchego. Somos uma escolinha com mais de 20 anos de experiência, dedicada ao cuidado e desenvolvimento das crianças em seus primeiros anos de vida. Nosso nome, Berçário e Brinquedoteca Aconchego, reflete nosso compromisso em proporcionar um ambiente acolhedor e seguro para que as crianças possam brincar, aprender e crescer. Em nossa escolinha, oferecemos uma variedade de atividades e recursos pedagógicos que estimulam o desenvolvimento cognitivo, motor e emocional das crianças. Contamos com uma equipe de profissionais qualificados e amorosos, que estão comprometidos em proporcionar o melhor cuidado e educação para cada criança. Venha nos conhecer e descubra por que somos uma escolha confiável para o cuidado e desenvolvimento dos seus filhos. M A T R Í C U L A S A B E R T A S Berçário 🧸 e Brinquedoteca 🛹 em período integral. Balé🩰 Judô 🥋 Local Adequado 😊 Profissionais com Experiência 🥰.
             </p>
             <div class="flex gap-8 text-[10px] uppercase tracking-[0.2em] opacity-30">
@@ -567,10 +578,10 @@
         filterBtns.forEach(btn => {
             btn.addEventListener('click', () => {
                 // Update active button
-                filterBtns.forEach(b => b.classList.remove('active', 'bg-accent', 'text-dark'));
+                filterBtns.forEach(b => b.classList.remove('active', 'bg-accent', 'text-white'));
                 btn.classList.add('active');
                 if (btn.dataset.filter !== 'all') {
-                    btn.classList.add('bg-accent', 'text-dark');
+                    btn.classList.add('bg-accent', 'text-white');
                 }
 
                 const filter = btn.dataset.filter;
