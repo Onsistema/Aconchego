@@ -26,8 +26,11 @@
                 extend: {
                     colors: {
                         dark: '#1E1B4B', // Deep Indigo for text
-                        accent: '#4338CA', // Royal Blue / Indigo 700
-                        soft: '#EEF2FF', // Light Blue / Indigo 50
+                        accent: '#2D55A5', // Logo Blue
+                        'logo-red': '#E31E24',
+                        'logo-yellow': '#FDB813',
+                        'logo-orange': '#F58220',
+                        soft: '#F0F4FF', // Very Light Blue
                     },
                     fontFamily: {
                         display: ['Playfair Display', 'serif'],
@@ -40,21 +43,27 @@
 
     <style>
         body {
-            background-color: #EEF2FF;
+            background-color: #F0F4FF;
             color: #1E1B4B;
             overflow-x: hidden;
         }
 
         .glass {
-            background: rgba(255, 255, 255, 0.6);
+            background: rgba(255, 255, 255, 0.7);
             backdrop-filter: blur(12px);
-            border: 1px solid rgba(30, 27, 75, 0.05);
+            border: 1px solid rgba(45, 85, 165, 0.1);
         }
 
         .text-gradient {
-            background: linear-gradient(to right, #1E1B4B, #4338CA);
+            background: linear-gradient(to right, #1E1B4B, #2D55A5);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+        }
+
+        .star-detail {
+            position: absolute;
+            pointer-events: none;
+            opacity: 0.4;
         }
 
         .marquee-content {
@@ -132,8 +141,18 @@
         </a>
     </header>
 
-    <!-- HERO SECTION -->
     <section class="relative min-h-screen flex items-center justify-center overflow-hidden pt-16 md:pt-20 pb-10">
+        <!-- Decorative Stars (Logo Alignment) -->
+        <div class="star-detail top-1/4 left-10 text-logo-red animate-pulse">
+            <i data-lucide="star" class="w-6 h-6 fill-current"></i>
+        </div>
+        <div class="star-detail bottom-1/4 right-10 text-logo-yellow animate-bounce" style="animation-duration: 3s;">
+            <i data-lucide="star" class="w-8 h-8 fill-current"></i>
+        </div>
+        <div class="star-detail top-1/3 right-20 text-logo-orange opacity-30">
+            <i data-lucide="sun" class="w-12 h-12"></i>
+        </div>
+
         <!-- Background Image with Overlay -->
         <div class="absolute inset-0 z-0">
             <img src="https://images.unsplash.com/photo-1587654780291-39c9404d746b?q=80&w=2070&auto=format&fit=crop" 
@@ -164,7 +183,7 @@
                 <a href="https://wa.me/5519981423373" target="_blank" class="cta-pulse bg-accent text-white px-10 py-5 rounded-full text-sm font-bold uppercase tracking-widest hover:scale-105 transition-transform">
                     Agendar visita pelo WhatsApp
                 </a>
-                <span class="text-xs uppercase tracking-widest opacity-40">Vagas Limitadas para 2026 em Campinas</span>
+                <span class="text-xs uppercase tracking-widest text-logo-red font-bold animate-pulse">Vagas Limitadas para 2026 em Campinas</span>
             </div>
         </div>
 
@@ -177,27 +196,27 @@
             <!-- Repeat content for seamless loop -->
             <div class="flex gap-12 items-center">
                 <span class="text-2xl font-display italic opacity-40 text-dark">20+ Anos de Tradição</span>
-                <div class="w-2 h-2 rounded-full bg-accent"></div>
+                <div class="w-2 h-2 rounded-full bg-logo-red"></div>
                 <span class="text-2xl font-display italic opacity-40 text-dark">Berçário & Brinquedoteca</span>
-                <div class="w-2 h-2 rounded-full bg-accent"></div>
+                <div class="w-2 h-2 rounded-full bg-logo-yellow"></div>
                 <span class="text-2xl font-display italic opacity-40 text-dark">Balé & Judô</span>
-                <div class="w-2 h-2 rounded-full bg-accent"></div>
+                <div class="w-2 h-2 rounded-full bg-logo-orange"></div>
                 <span class="text-2xl font-display italic opacity-40 text-dark">Período Integral</span>
                 <div class="w-2 h-2 rounded-full bg-accent"></div>
                 <span class="text-2xl font-display italic opacity-40 text-dark">Campinas - SP</span>
-                <div class="w-2 h-2 rounded-full bg-accent"></div>
+                <div class="w-2 h-2 rounded-full bg-logo-red"></div>
             </div>
             <div class="flex gap-12 items-center">
                 <span class="text-2xl font-display italic opacity-40 text-dark">20+ Anos de Tradição</span>
-                <div class="w-2 h-2 rounded-full bg-accent"></div>
+                <div class="w-2 h-2 rounded-full bg-logo-red"></div>
                 <span class="text-2xl font-display italic opacity-40 text-dark">Berçário & Brinquedoteca</span>
-                <div class="w-2 h-2 rounded-full bg-accent"></div>
+                <div class="w-2 h-2 rounded-full bg-logo-yellow"></div>
                 <span class="text-2xl font-display italic opacity-40 text-dark">Balé & Judô</span>
-                <div class="w-2 h-2 rounded-full bg-accent"></div>
+                <div class="w-2 h-2 rounded-full bg-logo-orange"></div>
                 <span class="text-2xl font-display italic opacity-40 text-dark">Período Integral</span>
                 <div class="w-2 h-2 rounded-full bg-accent"></div>
                 <span class="text-2xl font-display italic opacity-40 text-dark">Campinas - SP</span>
-                <div class="w-2 h-2 rounded-full bg-accent"></div>
+                <div class="w-2 h-2 rounded-full bg-logo-red"></div>
             </div>
         </div>
     </section>
@@ -211,13 +230,13 @@
 
         <div class="grid grid-cols-1 md:grid-cols-4 md:grid-rows-2 gap-6 h-auto md:h-[800px]">
             <!-- Card 1: Cuidado Individual -->
-            <div class="section-reveal bento-card md:col-span-2 md:row-span-2 glass rounded-[2rem] p-10 flex flex-col justify-end relative overflow-hidden group">
+            <div class="section-reveal bento-card md:col-span-2 md:row-span-2 glass rounded-[2rem] p-10 flex flex-col justify-end relative overflow-hidden group border-b-8 border-logo-red">
                 <img src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?q=80&w=1972&auto=format&fit=crop" 
                      class="absolute inset-0 w-full h-full object-cover opacity-20 group-hover:scale-110 transition-transform duration-700" 
                      alt="Cuidado individualizado"
                      referrerPolicy="no-referrer">
                 <div class="relative z-10">
-                    <div class="w-12 h-12 bg-accent/20 rounded-xl flex items-center justify-center mb-6 text-accent">
+                    <div class="w-12 h-12 bg-logo-red/20 rounded-xl flex items-center justify-center mb-6 text-logo-red">
                         <i data-lucide="heart"></i>
                     </div>
                     <h3 class="text-3xl font-display font-bold mb-4">Cuidado individual de verdade</h3>
@@ -226,14 +245,14 @@
             </div>
 
             <!-- Card 2: Descanso -->
-            <div class="section-reveal bento-card md:col-span-2 glass rounded-[2rem] p-10 flex flex-col justify-center relative overflow-hidden group">
+            <div class="section-reveal bento-card md:col-span-2 glass rounded-[2rem] p-10 flex flex-col justify-center relative overflow-hidden group border-r-8 border-logo-yellow">
                 <div class="flex justify-between items-start relative z-10">
                     <div>
                         <h3 class="text-2xl font-display font-bold mb-2">Descanso adequado e seguro</h3>
                         <p class="opacity-60">Aqui, o sono é sagrado. Utilizamos caminhas apropriadas que garantem conforto e segurança total — sem improvisos.</p>
                     </div>
                     <div class="flex gap-2">
-                        <div class="w-10 h-10 bg-dark/5 rounded-full flex items-center justify-center text-accent">
+                        <div class="w-10 h-10 bg-logo-yellow/20 rounded-full flex items-center justify-center text-logo-yellow">
                             <i data-lucide="moon"></i>
                         </div>
                     </div>
@@ -241,8 +260,8 @@
             </div>
 
             <!-- Card 3: Alimentação -->
-            <div class="section-reveal bento-card glass rounded-[2rem] p-8 flex flex-col justify-between group">
-                <div class="text-accent mb-4">
+            <div class="section-reveal bento-card glass rounded-[2rem] p-8 flex flex-col justify-between group border-l-8 border-logo-orange">
+                <div class="text-logo-orange mb-4">
                     <i data-lucide="apple"></i>
                 </div>
                 <div>
@@ -252,7 +271,7 @@
             </div>
 
             <!-- Card 4: Turmas Reduzidas -->
-            <div class="section-reveal bento-card glass rounded-[2rem] p-8 flex flex-col justify-between group">
+            <div class="section-reveal bento-card glass rounded-[2rem] p-8 flex flex-col justify-between group border-t-8 border-accent">
                 <div class="text-accent mb-4">
                     <i data-lucide="users"></i>
                 </div>
@@ -289,19 +308,19 @@
                 </p>
                 <ul class="section-reveal space-y-4 mb-12">
                     <li class="flex items-center gap-4 opacity-80">
-                        <div class="w-6 h-6 rounded-full bg-accent/20 flex items-center justify-center text-accent">
+                        <div class="w-6 h-6 rounded-full bg-logo-red/20 flex items-center justify-center text-logo-red">
                             <i data-lucide="check" class="w-4 h-4"></i>
                         </div>
                         Desenvolvimento que respeita o tempo de cada criança
                     </li>
                     <li class="flex items-center gap-4 opacity-80">
-                        <div class="w-6 h-6 rounded-full bg-accent/20 flex items-center justify-center text-accent">
+                        <div class="w-6 h-6 rounded-full bg-logo-yellow/20 flex items-center justify-center text-logo-yellow">
                             <i data-lucide="check" class="w-4 h-4"></i>
                         </div>
                         Ambiente que abraça e acolhe com afeto genuíno
                     </li>
                     <li class="flex items-center gap-4 opacity-80">
-                        <div class="w-6 h-6 rounded-full bg-accent/20 flex items-center justify-center text-accent">
+                        <div class="w-6 h-6 rounded-full bg-logo-orange/20 flex items-center justify-center text-logo-orange">
                             <i data-lucide="check" class="w-4 h-4"></i>
                         </div>
                         Tranquilidade total para pais que trabalham
@@ -493,17 +512,22 @@
             </div>
 
             <div>
-                <span class="block font-bold uppercase tracking-widest text-xs mb-6 opacity-30">Contato</span>
+                <span class="block font-bold uppercase tracking-widest text-xs mb-6 opacity-30 text-logo-red">Contato</span>
                 <p class="opacity-60 text-sm leading-loose">
                     (19) 98142-3373<br>
                     contato@aconchego.com.br
                 </p>
+                <div class="mt-6 flex gap-2 text-logo-yellow">
+                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                </div>
             </div>
         </div>
 
         <div class="max-w-7xl mx-auto flex flex-col md:row justify-between items-center pt-12 border-t border-dark/5 gap-6">
             <p class="text-[10px] uppercase tracking-[0.3em] opacity-30 text-center max-w-4xl mx-auto text-dark">
-                &copy; 2026 Berçário e Brinquedoteca Aconchego. Somos uma escolinha com mais de 20 anos de experiência, dedicada ao cuidado e desenvolvimento das crianças em seus primeiros anos de vida. Nosso nome, Berçário e Brinquedoteca Aconchego, reflete nosso compromisso em proporcionar um ambiente acolhedor e seguro para que as crianças possam brincar, aprender e crescer. Em nossa escolinha, oferecemos uma variedade de atividades e recursos pedagógicos que estimulam o desenvolvimento cognitivo, motor e emocional das crianças. Contamos com uma equipe de profissionais qualificados e amorosos, que estão comprometidos em proporcionar o melhor cuidado e educação para cada criança. Venha nos conhecer e descubra por que somos uma escolha confiável para o cuidado e desenvolvimento dos seus filhos. M A T R Í C U L A S A B E R T A S Berçário 🧸 e Brinquedoteca 🛹 em período integral. Balé🩰 Judô 🥋 Local Adequado 😊 Profissionais com Experiência 🥰.
+                &copy; 2026 Berçário e Brinquedoteca Aconchego. <span class="text-logo-red font-bold">M A T R Í C U L A S A B E R T A S</span>. Somos uma escolinha com mais de 20 anos de experiência, dedicada ao cuidado e desenvolvimento das crianças em seus primeiros anos de vida. Nosso nome, Berçário e Brinquedoteca Aconchego, reflete nosso compromisso em proporcionar um ambiente acolhedor e seguro para que as crianças possam brincar, aprender e crescer. Em nossa escolinha, oferecemos uma variedade de atividades e recursos pedagógicos que estimulam o desenvolvimento cognitivo, motor e emocional das crianças. Contamos com uma equipe de profissionais qualificados e amorosos, que estão comprometidos em proporcionar o melhor cuidado e educação para cada criança. Venha nos conhecer e descubra por que somos uma escolha confiável para o cuidado e desenvolvimento dos seus filhos. Berçário 🧸 e Brinquedoteca 🛹 em período integral. Balé🩰 Judô 🥋 Local Adequado 😊 Profissionais com Experiência 🥰.
             </p>
             <div class="flex gap-8 text-[10px] uppercase tracking-[0.2em] opacity-30">
                 <a href="#" class="hover:text-accent">Privacidade</a>
@@ -511,6 +535,15 @@
             </div>
         </div>
     </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/5519981423373" target="_blank" class="fixed bottom-6 right-6 z-[100] bg-[#25D366] text-white p-4 rounded-full shadow-2xl hover:scale-110 transition-transform flex items-center justify-center group">
+        <div class="absolute -top-2 -left-2 text-logo-red animate-pulse">
+            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+        </div>
+        <i data-lucide="message-circle" class="w-6 h-6"></i>
+        <span class="max-w-0 overflow-hidden group-hover:max-w-xs group-hover:ml-2 transition-all duration-500 whitespace-nowrap font-bold text-sm">Fale Conosco</span>
+    </a>
 
     <script>
         // Initialize Lucide Icons
