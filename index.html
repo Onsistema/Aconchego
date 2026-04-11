@@ -68,18 +68,18 @@
 
         .marquee-content {
             display: flex;
-            animation: marquee 10s linear infinite;
+            animation: marquee 30s linear infinite;
         }
 
         @media (max-width: 768px) {
             .marquee-content {
-                animation: marquee 4s linear infinite;
+                animation: marquee 15s linear infinite;
             }
         }
 
         @keyframes marquee {
             0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
+            100% { transform: translateX(-33.33%); }
         }
 
         .bento-card {
@@ -180,9 +180,16 @@
                 </p>
             </div>
             <div class="hero-reveal flex flex-col md:flex-row gap-4 justify-center items-center mb-4">
-                <a href="https://wa.me/5519981423373" target="_blank" class="cta-pulse bg-accent text-white px-10 py-5 rounded-full text-sm font-bold uppercase tracking-widest hover:scale-105 transition-transform">
+                <a href="https://wa.me/5519981423373" target="_blank" class="cta-pulse bg-accent text-white px-10 py-5 rounded-full text-sm font-bold uppercase tracking-widest hover:scale-105 transition-transform flex items-center gap-2">
+                    <i data-lucide="message-circle" class="w-5 h-5"></i>
                     Agendar visita pelo WhatsApp
                 </a>
+                <a href="https://www.google.com/maps/dir/?api=1&destination=R.+Dr.+Cassiano+Gonzaga,+186+-+São+Bernardo,+Campinas+-+SP,+13030-470" target="_blank" class="border-2 border-accent text-accent px-10 py-5 rounded-full text-sm font-bold uppercase tracking-widest hover:bg-accent hover:text-white transition-all flex items-center gap-2">
+                    <i data-lucide="map-pin" class="w-5 h-5"></i>
+                    Como Chegar
+                </a>
+            </div>
+            <div class="hero-reveal">
                 <span class="text-xs uppercase tracking-widest text-logo-red font-bold animate-pulse">Vagas Limitadas para 2026 em Campinas</span>
             </div>
         </div>
@@ -192,9 +199,9 @@
 
     <!-- AUTHORITY MARQUEE -->
     <section class="py-12 border-y border-dark/5 overflow-hidden bg-dark/[0.02]">
-        <div class="marquee-content gap-12 whitespace-nowrap">
+        <div class="marquee-content whitespace-nowrap">
             <!-- Repeat content for seamless loop -->
-            <div class="flex gap-12 items-center">
+            <div class="flex gap-12 items-center pr-12">
                 <span class="text-2xl font-display italic opacity-40 text-dark">20+ Anos de Tradição</span>
                 <div class="w-2 h-2 rounded-full bg-logo-red"></div>
                 <span class="text-2xl font-display italic opacity-40 text-dark">Berçário & Brinquedoteca</span>
@@ -206,7 +213,19 @@
                 <span class="text-2xl font-display italic opacity-40 text-dark">Campinas - SP</span>
                 <div class="w-2 h-2 rounded-full bg-logo-red"></div>
             </div>
-            <div class="flex gap-12 items-center">
+            <div class="flex gap-12 items-center pr-12">
+                <span class="text-2xl font-display italic opacity-40 text-dark">20+ Anos de Tradição</span>
+                <div class="w-2 h-2 rounded-full bg-logo-red"></div>
+                <span class="text-2xl font-display italic opacity-40 text-dark">Berçário & Brinquedoteca</span>
+                <div class="w-2 h-2 rounded-full bg-logo-yellow"></div>
+                <span class="text-2xl font-display italic opacity-40 text-dark">Balé & Judô</span>
+                <div class="w-2 h-2 rounded-full bg-logo-orange"></div>
+                <span class="text-2xl font-display italic opacity-40 text-dark">Período Integral</span>
+                <div class="w-2 h-2 rounded-full bg-accent"></div>
+                <span class="text-2xl font-display italic opacity-40 text-dark">Campinas - SP</span>
+                <div class="w-2 h-2 rounded-full bg-logo-red"></div>
+            </div>
+            <div class="flex gap-12 items-center pr-12">
                 <span class="text-2xl font-display italic opacity-40 text-dark">20+ Anos de Tradição</span>
                 <div class="w-2 h-2 rounded-full bg-logo-red"></div>
                 <span class="text-2xl font-display italic opacity-40 text-dark">Berçário & Brinquedoteca</span>
