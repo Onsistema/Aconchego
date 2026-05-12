@@ -188,6 +188,21 @@
             }
         }
 
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: rgba(45, 85, 165, 0.3);
+            border-radius: 10px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: rgba(45, 85, 165, 0.5);
+        }
+
         .cta-pulse {
             animation: pulse 2s infinite;
         }
@@ -582,6 +597,118 @@
         </div>
     </section>
 
+    <!-- EVENTOS ESPECIAIS / VENDA DE FOTOS -->
+    <section id="eventos" class="py-32 px-6 md:px-12 max-w-7xl mx-auto border-t border-dark/5">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+            <div class="order-2 lg:order-1">
+                <span class="section-reveal block text-logo-red font-medium uppercase tracking-widest text-sm mb-6">Recordações Especiais</span>
+                <h2 class="section-reveal text-4xl md:text-6xl font-display font-bold mb-8 leading-tight">Reviva os momentos mais lindos.</h2>
+                <p class="section-reveal text-lg opacity-60 mb-8 leading-relaxed">
+                    Nossa nova galeria de eventos está pronta! Aqui você encontra as prévias de todas as festas, datas comemorativas e atividades especiais que realizamos. 
+                    <br><br>
+                    Explore a nossa pasta exclusiva e escolha as fotos favoritas do seu pequeno para guardar para sempre.
+                </p>
+                
+                <div class="section-reveal flex flex-col sm:flex-row gap-6">
+                    <button onclick="openEventosModal(0)" 
+                       class="inline-flex items-center justify-center gap-3 bg-logo-red text-white px-8 py-4 rounded-full font-bold uppercase tracking-widest text-xs hover:bg-logo-red/90 transition-all shadow-xl shadow-logo-red/20 cursor-pointer">
+                        <i data-lucide="camera" class="w-5 h-5"></i>
+                        Visualizar Fotos de Eventos
+                    </button>
+                </div>
+            </div>
+
+            <div class="order-1 lg:order-2 grid grid-cols-2 gap-4">
+                <!-- Preview Grid with exactly 2 images -->
+                <div class="section-reveal group relative aspect-[3/4] rounded-3xl overflow-hidden glass border-accent/20 rotate-[-2deg] translate-y-4 hover:rotate-0 transition-transform duration-500 cursor-pointer" onclick="openEventosModal(0)">
+                    <img src="https://lh3.googleusercontent.com/d/1DqYljW7y4_C6SIATXjIs9rUmVJ-JOBqM=w600" alt="Evento Aconchego" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" referrerPolicy="no-referrer">
+                    <div class="absolute inset-0 bg-dark/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                        <i data-lucide="camera" class="text-white w-8 h-8"></i>
+                    </div>
+                </div>
+                <div class="section-reveal group relative aspect-[3/4] rounded-3xl overflow-hidden glass border-logo-red/20 rotate-[3deg] hover:rotate-0 transition-transform duration-500 cursor-pointer" onclick="openEventosModal(1)">
+                    <img src="https://lh3.googleusercontent.com/d/1JgnAeJ0xZskuF7EAwu6N-3KJE7tLI8TB=w600" alt="Evento Aconchego" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" referrerPolicy="no-referrer">
+                    <div class="absolute inset-0 bg-dark/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                        <i data-lucide="camera" class="text-white w-8 h-8"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EVENTOS DATA (HIDDEN) -->
+    <div id="eventos-modal" class="hidden">
+        <div class="gallery-item"><img src="https://lh3.googleusercontent.com/d/1DqYljW7y4_C6SIATXjIs9rUmVJ-JOBqM" alt="Evento Aconchego" referrerPolicy="no-referrer"></div>
+        <div class="gallery-item"><img src="https://lh3.googleusercontent.com/d/1JgnAeJ0xZskuF7EAwu6N-3KJE7tLI8TB" alt="Evento Aconchego" referrerPolicy="no-referrer"></div>
+        <div class="gallery-item"><img src="https://lh3.googleusercontent.com/d/1tLr3OOdIU_yhi-j7_xEDncWPHAZuKMlD" alt="Evento Aconchego" referrerPolicy="no-referrer"></div>
+        <div class="gallery-item"><img src="https://lh3.googleusercontent.com/d/1fxy23Ye4LLKdEDa5SptGfwshRoeK_BCz" alt="Evento Aconchego" referrerPolicy="no-referrer"></div>
+        <div class="gallery-item"><img src="https://lh3.googleusercontent.com/d/1FNfWkyN8_c5DEW4vi-uoVEsnHX0YdgAZ" alt="Evento Aconchego" referrerPolicy="no-referrer"></div>
+        <div class="gallery-item"><img src="https://lh3.googleusercontent.com/d/1sj7O9dUzVCTAfTfNHOpAUjACc0gwiEwA" alt="Evento Aconchego" referrerPolicy="no-referrer"></div>
+        <div class="gallery-item"><img src="https://lh3.googleusercontent.com/d/11urzto4Fc6MIke12A9A1UNGkUdnpbpqG" alt="Evento Aconchego" referrerPolicy="no-referrer"></div>
+        <div class="gallery-item"><img src="https://lh3.googleusercontent.com/d/1KJHxjwGim7ORiV0_9SF8JQOaXXGkpjtr" alt="Evento Aconchego" referrerPolicy="no-referrer"></div>
+        <div class="gallery-item"><img src="https://lh3.googleusercontent.com/d/1tuOu8wdE3phkzU0ovWA7BxKiYOPUe3jd" alt="Evento Aconchego" referrerPolicy="no-referrer"></div>
+        <div class="gallery-item"><img src="https://lh3.googleusercontent.com/d/1etRUJxv6SJRlZerpWoP6OcIZr5cmoBYE" alt="Evento Aconchego" referrerPolicy="no-referrer"></div>
+        <div class="gallery-item"><img src="https://lh3.googleusercontent.com/d/1j8vA0BSK_4nYetFbifTzOPCvvN038ZTM" alt="Evento Aconchego" referrerPolicy="no-referrer"></div>
+        <div class="gallery-item"><img src="https://lh3.googleusercontent.com/d/168S_ZFnCnSNZrm2hKzej2CiPekoKTV1r" alt="Evento Aconchego" referrerPolicy="no-referrer"></div>
+        <div class="gallery-item"><img src="https://lh3.googleusercontent.com/d/1TUyylFIPeXg5p2WCAszclsz_pH7dDREj" alt="Evento Aconchego" referrerPolicy="no-referrer"></div>
+        <div class="gallery-item"><img src="https://lh3.googleusercontent.com/d/1ZjZQ79uQL-Tq379P8t8sEoSlrc2LODd4" alt="Evento Aconchego" referrerPolicy="no-referrer"></div>
+        <div class="gallery-item"><img src="https://lh3.googleusercontent.com/d/1Rb7RNxGgZmAmwSxH6WGZcfYUqnTctpDt" alt="Evento Aconchego" referrerPolicy="no-referrer"></div>
+        <div class="gallery-item"><img src="https://lh3.googleusercontent.com/d/1vKRYMbNRzEtS7oHrTpG6x2UktdypTZ_j" alt="Evento Aconchego" referrerPolicy="no-referrer"></div>
+        <div class="gallery-item"><img src="https://lh3.googleusercontent.com/d/15AU3Elwkchpm-XMLfU7KrvitG13_ZKxd" alt="Evento Aconchego" referrerPolicy="no-referrer"></div>
+        <div class="gallery-item"><img src="https://lh3.googleusercontent.com/d/1ZfdWMYcRb-RF7g1qFcOAYSMsjGMdmPMy" alt="Evento Aconchego" referrerPolicy="no-referrer"></div>
+        <div class="gallery-item"><img src="https://lh3.googleusercontent.com/d/1XhfUe3RIsyUmZqGLyo3J9TLdCt_605FL" alt="Evento Aconchego" referrerPolicy="no-referrer"></div>
+        <div class="gallery-item"><img src="https://lh3.googleusercontent.com/d/12QNE81kvb2CNZUxuXHgwQE7e8RYwfFYw" alt="Evento Aconchego" referrerPolicy="no-referrer"></div>
+        <div class="gallery-item"><img src="https://lh3.googleusercontent.com/d/1Jfog558YmRFl_JR8GwjPAqfKSuM6KW3W" alt="Evento Aconchego" referrerPolicy="no-referrer"></div>
+        <div class="gallery-item"><img src="https://lh3.googleusercontent.com/d/1WGHBgDslSkenHtxTebS4_pkQPy2kdHLs" alt="Evento Aconchego" referrerPolicy="no-referrer"></div>
+        <div class="gallery-item"><img src="https://lh3.googleusercontent.com/d/1Wgg8K8f-fmtRMIGVGtmiMKxXzKfhZd_L" alt="Evento Aconchego" referrerPolicy="no-referrer"></div>
+        <div class="gallery-item"><img src="https://lh3.googleusercontent.com/d/1d6C1mj6tbQOrPBno5T7zb7RJ_fyK5-Yz" alt="Evento Aconchego" referrerPolicy="no-referrer"></div>
+        <div class="gallery-item"><img src="https://lh3.googleusercontent.com/d/11qYuFq2DXv4tyen4yHASKDI8twNJ2fS1" alt="Evento Aconchego" referrerPolicy="no-referrer"></div>
+        <div class="gallery-item"><img src="https://lh3.googleusercontent.com/d/1FWr4210nK5q4jIIFeL692issvIKu-jy_" alt="Evento Aconchego" referrerPolicy="no-referrer"></div>
+        <div class="gallery-item"><img src="https://lh3.googleusercontent.com/d/173BuNJ322S-WvwcW17DPjnsHbNR7xQFT" alt="Evento Aconchego" referrerPolicy="no-referrer"></div>
+        <div class="gallery-item"><img src="https://lh3.googleusercontent.com/d/1W_AIQPCoqrhSwZ8BH5AmjOnRiLC1Ro_F" alt="Evento Aconchego" referrerPolicy="no-referrer"></div>
+        <div class="gallery-item"><img src="https://lh3.googleusercontent.com/d/1EtQ4Uq6M-1ARsQ2n3INEQzYZX4-rDSqp" alt="Evento Aconchego" referrerPolicy="no-referrer"></div>
+        <div class="gallery-item"><img src="https://lh3.googleusercontent.com/d/163UEX-Slgw0tIMs7Eb3oKIzLt1HS8pkA" alt="Evento Aconchego" referrerPolicy="no-referrer"></div>
+        <div class="gallery-item"><img src="https://lh3.googleusercontent.com/d/1i-bLmUYmg9ZvcaREU0CRZ6nQ2Z9HJeET" alt="Evento Aconchego" referrerPolicy="no-referrer"></div>
+        <div class="gallery-item"><img src="https://lh3.googleusercontent.com/d/1G9wtcBCp0hvJB5rc54QrePGpXb8iQb3T" alt="Evento Aconchego" referrerPolicy="no-referrer"></div>
+        <div class="gallery-item"><img src="https://lh3.googleusercontent.com/d/1a82BVnDmPX78eRWlT8wBhlvf5ZABcMkP" alt="Evento Aconchego" referrerPolicy="no-referrer"></div>
+        <div class="gallery-item"><img src="https://lh3.googleusercontent.com/d/1QT_vo8dBOfhujRMl2QaYMxmEUl_rgtTc" alt="Evento Aconchego" referrerPolicy="no-referrer"></div>
+        <div class="gallery-item"><img src="https://lh3.googleusercontent.com/d/1jZBVYUhaL2Kzk85ogP4SuvSOCJmGzdDy" alt="Evento Aconchego" referrerPolicy="no-referrer"></div>
+        <div class="gallery-item"><img src="https://lh3.googleusercontent.com/d/16TzKtZ4y_t2bGMv-NnIvctc88YeTl6DX" alt="Evento Aconchego" referrerPolicy="no-referrer"></div>
+        <div class="gallery-item"><img src="https://lh3.googleusercontent.com/d/1_RWctT_2ma1ZQPCTVlGl6GmrXsBc1i43" alt="Evento Aconchego" referrerPolicy="no-referrer"></div>
+        <div class="gallery-item"><img src="https://lh3.googleusercontent.com/d/1uNnjrviWjNXEOXyOdeA8So4bcT5qwXu9" alt="Evento Aconchego" referrerPolicy="no-referrer"></div>
+        <div class="gallery-item"><img src="https://lh3.googleusercontent.com/d/1ct7dgY-4HG7SNC7jZftUBW7lZcrTfxPU" alt="Evento Aconchego" referrerPolicy="no-referrer"></div>
+        <div class="gallery-item"><img src="https://lh3.googleusercontent.com/d/1JHU8Gwa5BczCsA7-thEwGs89E238LDwE" alt="Evento Aconchego" referrerPolicy="no-referrer"></div>
+        <div class="gallery-item"><img src="https://lh3.googleusercontent.com/d/1cG8ruZC769nBdMWhIkJfDJZodQlynGNg" alt="Evento Aconchego" referrerPolicy="no-referrer"></div>
+        <div class="gallery-item"><img src="https://lh3.googleusercontent.com/d/1o-7KTHqvSvmu3MsE6oSCl7dTd5xw9q0a" alt="Evento Aconchego" referrerPolicy="no-referrer"></div>
+        <div class="gallery-item"><img src="https://lh3.googleusercontent.com/d/13l2CJDx-7BsEODxjn6KJFJt53BQUYyIK" alt="Evento Aconchego" referrerPolicy="no-referrer"></div>
+        <div class="gallery-item"><img src="https://lh3.googleusercontent.com/d/1ZUtgcG0i3T-j_VRE2Vq3JE24OU1NAunV" alt="Evento Aconchego" referrerPolicy="no-referrer"></div>
+        <div class="gallery-item"><img src="https://lh3.googleusercontent.com/d/1g0p72ao_1MYBTYHVfZYGEbprxJCAGWuA" alt="Evento Aconchego" referrerPolicy="no-referrer"></div>
+        <div class="gallery-item"><img src="https://lh3.googleusercontent.com/d/1zsqu03HoaVG9EAlewxfTyQjC1-q90jbz" alt="Evento Aconchego" referrerPolicy="no-referrer"></div>
+        <div class="gallery-item"><img src="https://lh3.googleusercontent.com/d/15Fb7hiEEcZFbWsRlsD72xvzTxCZga9yC" alt="Evento Aconchego" referrerPolicy="no-referrer"></div>
+        <div class="gallery-item"><img src="https://lh3.googleusercontent.com/d/11XUJHv50N9Ifp6LTHY6U0LoIykiFc5XY" alt="Evento Aconchego" referrerPolicy="no-referrer"></div>
+        <div class="gallery-item"><img src="https://lh3.googleusercontent.com/d/1X0znvOXXx4XZAfIWki7VAXhFbA35lci2" alt="Evento Aconchego" referrerPolicy="no-referrer"></div>
+        <div class="gallery-item"><img src="https://lh3.googleusercontent.com/d/16rJZOqHqigs1wBa0ixAEn3sIMd0rYG2w" alt="Evento Aconchego" referrerPolicy="no-referrer"></div>
+        <div class="gallery-item"><img src="https://lh3.googleusercontent.com/d/1CDaW3VV8JgcgHY7KnMs16DJ8Imtre-ID" alt="Evento Aconchego" referrerPolicy="no-referrer"></div>
+        <div class="gallery-item"><img src="https://lh3.googleusercontent.com/d/1dKRcvVKBEZ1LjfjcmqQ3cqwpmkSHUvZu" alt="Evento Aconchego" referrerPolicy="no-referrer"></div>
+        <div class="gallery-item"><img src="https://lh3.googleusercontent.com/d/1gQ-UlBX5_zoEIitLqNejrVs1enQ-KiBE" alt="Evento Aconchego" referrerPolicy="no-referrer"></div>
+        <div class="gallery-item"><img src="https://lh3.googleusercontent.com/d/1V0OKnH5OFEKI9ykZE4GuxMvf6GJWIzby" alt="Evento Aconchego" referrerPolicy="no-referrer"></div>
+        <div class="gallery-item"><img src="https://lh3.googleusercontent.com/d/1iGmgcbPlJLGzKpHwdVuPQCAeHdxOTHKz" alt="Evento Aconchego" referrerPolicy="no-referrer"></div>
+        <div class="gallery-item"><img src="https://lh3.googleusercontent.com/d/1-tQiN35bSgI0P4-PacwxPCZ0hE_nb5ip" alt="Evento Aconchego" referrerPolicy="no-referrer"></div>
+        <div class="gallery-item"><img src="https://lh3.googleusercontent.com/d/12Kg2ZVfQXW_9mCikOOQXm7j0uN-7EBGL" alt="Evento Aconchego" referrerPolicy="no-referrer"></div>
+        <div class="gallery-item"><img src="https://lh3.googleusercontent.com/d/1RDcbRpNPdeIAdeQbOaMpMPv5wwwTepga" alt="Evento Aconchego" referrerPolicy="no-referrer"></div>
+        <div class="gallery-item"><img src="https://lh3.googleusercontent.com/d/12kqjYV7jPN5k_0haZ6-8kHG57m9nzaOH" alt="Evento Aconchego" referrerPolicy="no-referrer"></div>
+        <div class="gallery-item"><img src="https://lh3.googleusercontent.com/d/1h3MYKOc2Gi9qT5x7VdHPIHWBwARw8p4P" alt="Evento Aconchego" referrerPolicy="no-referrer"></div>
+        <div class="gallery-item"><img src="https://lh3.googleusercontent.com/d/17U1qNSMuSCeSEApxnt10XBM3N0akwzYU" alt="Evento Aconchego" referrerPolicy="no-referrer"></div>
+        <div class="gallery-item"><img src="https://lh3.googleusercontent.com/d/1Wp95U09YoQMEedd_Ce3FyGdMyo5LiYHA" alt="Evento Aconchego" referrerPolicy="no-referrer"></div>
+        <div class="gallery-item"><img src="https://lh3.googleusercontent.com/d/1wsIKlTvy_BAC2vHtFlDoh_mJ5Ih4VmMw" alt="Evento Aconchego" referrerPolicy="no-referrer"></div>
+        <div class="gallery-item"><img src="https://lh3.googleusercontent.com/d/1B9IAs48gOFsLDly-A38bxnp4ckIcE8Fa" alt="Evento Aconchego" referrerPolicy="no-referrer"></div>
+        <div class="gallery-item"><img src="https://lh3.googleusercontent.com/d/1XuDtxGzLGF9toRKsjOlr5C1dkavxRLzz" alt="Evento Aconchego" referrerPolicy="no-referrer"></div>
+        <div class="gallery-item"><img src="https://lh3.googleusercontent.com/d/1CAWF_gjF3w5Y91uN86Y9c2d4g554vTxV" alt="Evento Aconchego" referrerPolicy="no-referrer"></div>
+        <div class="gallery-item"><img src="https://lh3.googleusercontent.com/d/1i6pJqr_Nvhewoare5xVsAERw80fz4QGe" alt="Evento Aconchego" referrerPolicy="no-referrer"></div>
+        <div class="gallery-item"><img src="https://lh3.googleusercontent.com/d/1ZztlhBeJsOKnl0XFVNKAtyJdDJKM-6oj" alt="Evento Aconchego" referrerPolicy="no-referrer"></div>
+        <div class="gallery-item"><img src="https://lh3.googleusercontent.com/d/1MbRBlhx8cspzM06RR4N5AHgbFLjO5tX8" alt="Evento Aconchego" referrerPolicy="no-referrer"></div>
+    </div>
+
     <!-- LIGHTBOX MODAL -->
     <div id="lightbox" class="fixed inset-0 z-[100] bg-dark/95 hidden items-center justify-center p-6 backdrop-blur-3xl">
         <button class="absolute top-6 right-6 md:top-10 md:right-10 text-white/50 hover:text-accent transition-colors z-[110]" onclick="closeLightbox()">
@@ -828,7 +955,7 @@
                 } else {
                     galleryGrid.scrollBy({ left: itemWidth, behavior: 'smooth' });
                 }
-            }, 1000);
+            }, 3000);
         }
 
         startAutoScroll();
@@ -880,9 +1007,34 @@
 
         // Lightbox Logic
         const lightbox = document.getElementById('lightbox');
+        const eventosModal = document.getElementById('eventos-modal');
         const lightboxImg = document.getElementById('lightbox-img');
         let currentGalleryItems = [];
         let currentIndex = 0;
+
+        window.openEventosModal = (startIndex = 0) => {
+            // Get images specifically from the events collection
+            currentGalleryItems = Array.from(document.querySelectorAll('#eventos-modal .gallery-item'));
+            if (currentGalleryItems.length === 0) return;
+            
+            currentIndex = startIndex;
+            updateLightbox();
+
+            lightbox.classList.remove('hidden');
+            lightbox.classList.add('flex');
+            
+            gsap.fromTo(lightbox, { opacity: 0 }, { opacity: 1, duration: 0.3 });
+            gsap.fromTo(lightboxImg, { scale: 0.8, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.5, delay: 0.1, ease: 'back.out(1.7)' });
+            
+            document.body.style.overflow = 'hidden';
+        };
+
+        window.closeEventosModal = () => {
+            // No longer used visually but kept for compatibility
+            eventosModal.classList.add('hidden');
+            eventosModal.classList.remove('flex');
+            document.body.style.overflow = '';
+        };
 
         window.openLightbox = (element) => {
             // Get currently visible items based on active filter
@@ -946,6 +1098,25 @@
                 if (e.key === 'Escape') closeLightbox();
             }
         });
+
+        // Touch Swipe Support for Lightbox
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        lightbox.addEventListener('touchstart', e => {
+            touchStartX = e.changedTouches[0].screenX;
+        }, {passive: true});
+
+        lightbox.addEventListener('touchend', e => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        }, {passive: true});
+
+        function handleSwipe() {
+            const swipeThreshold = 50;
+            if (touchEndX < touchStartX - swipeThreshold) nextImage();
+            if (touchEndX > touchStartX + swipeThreshold) prevImage();
+        }
 
         window.closeLightbox = () => {
             gsap.to(lightbox, { 
