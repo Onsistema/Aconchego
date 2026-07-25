@@ -601,7 +601,6 @@
     <section id="eventos" class="py-32 px-6 md:px-12 max-w-7xl mx-auto border-t border-dark/5">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
             <div class="order-2 lg:order-1">
-                <span class="section-reveal block text-logo-red font-medium uppercase tracking-widest text-sm mb-6">Recordações Especiais</span>
                 <h2 class="section-reveal text-4xl md:text-6xl font-display font-bold mb-8 leading-tight">Reviva os momentos mais lindos.</h2>
                 <p class="section-reveal text-lg opacity-60 mb-8 leading-relaxed">
                     Nossa nova galeria de eventos está pronta! Aqui você encontra as prévias de todas as festas, datas comemorativas e atividades especiais que realizamos. 
@@ -610,27 +609,21 @@
                 </p>
                 
                 <div class="section-reveal flex flex-col sm:flex-row gap-6">
-                    <button onclick="openEventosModal(0)" 
+                    <a href="https://fotoschool.base44.app" target="_blank" rel="noopener noreferrer" 
                        class="inline-flex items-center justify-center gap-3 bg-logo-red text-white px-8 py-4 rounded-full font-bold uppercase tracking-widest text-xs hover:bg-logo-red/90 transition-all shadow-xl shadow-logo-red/20 cursor-pointer">
                         <i data-lucide="camera" class="w-5 h-5"></i>
                         Visualizar Fotos de Eventos
-                    </button>
+                    </a>
                 </div>
             </div>
 
             <div class="order-1 lg:order-2 grid grid-cols-2 gap-4">
-                <!-- Preview Grid with exactly 2 images -->
-                <div class="section-reveal group relative aspect-[3/4] rounded-3xl overflow-hidden glass border-accent/20 rotate-[-2deg] translate-y-4 hover:rotate-0 transition-transform duration-500 cursor-pointer" onclick="openEventosModal(0)">
-                    <img src="https://lh3.googleusercontent.com/d/1DqYljW7y4_C6SIATXjIs9rUmVJ-JOBqM=w600" alt="Evento Aconchego" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" referrerPolicy="no-referrer">
-                    <div class="absolute inset-0 bg-dark/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                        <i data-lucide="camera" class="text-white w-8 h-8"></i>
-                    </div>
+                <!-- Preview Grid with exactly 2 images (decorative) -->
+                <div class="section-reveal relative aspect-[3/4] rounded-3xl overflow-hidden glass border-accent/20 rotate-[-2deg] translate-y-4">
+                    <img src="https://lh3.googleusercontent.com/d/1DqYljW7y4_C6SIATXjIs9rUmVJ-JOBqM=w600" alt="Evento Aconchego" class="w-full h-full object-cover select-none pointer-events-none" referrerPolicy="no-referrer">
                 </div>
-                <div class="section-reveal group relative aspect-[3/4] rounded-3xl overflow-hidden glass border-logo-red/20 rotate-[3deg] hover:rotate-0 transition-transform duration-500 cursor-pointer" onclick="openEventosModal(1)">
-                    <img src="https://lh3.googleusercontent.com/d/1JgnAeJ0xZskuF7EAwu6N-3KJE7tLI8TB=w600" alt="Evento Aconchego" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" referrerPolicy="no-referrer">
-                    <div class="absolute inset-0 bg-dark/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                        <i data-lucide="camera" class="text-white w-8 h-8"></i>
-                    </div>
+                <div class="section-reveal relative aspect-[3/4] rounded-3xl overflow-hidden glass border-logo-red/20 rotate-[3deg]">
+                    <img src="https://lh3.googleusercontent.com/d/1JgnAeJ0xZskuF7EAwu6N-3KJE7tLI8TB=w600" alt="Evento Aconchego" class="w-full h-full object-cover select-none pointer-events-none" referrerPolicy="no-referrer">
                 </div>
             </div>
         </div>
