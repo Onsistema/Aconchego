@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://www.bercarioaconchego.com.br/sitemap.xml
