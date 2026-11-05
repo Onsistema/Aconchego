@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="t d">
+<title id="t">Aconchego</title><desc id="d">Logo Aconchego com sol sorridente e estrelas coloridas</desc>
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#44c8f5"/><stop offset="1" stop-color="#7dd8f7"/></linearGradient>
+  <linearGradient id="sun" x1=".2" y1="0" x2=".8" y2="1"><stop stop-color="#ffd83d"/><stop offset="1" stop-color="#ffb81c"/></linearGradient>
+  <filter id="s" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="5" stdDeviation="6" flood-opacity=".18"/></filter>
+</defs>
+<rect width="512" height="512" rx="96" fill="url(#bg)"/>
+<circle cx="256" cy="250" r="206" fill="#fff8ec" stroke="#ffcf31" stroke-width="14"/>
+<circle cx="256" cy="250" r="226" fill="none" stroke="#2cb5e8" stroke-width="9"/>
+<g fill="#fff" opacity=".95"><circle cx="67" cy="148" r="7"/><circle cx="456" cy="169" r="6"/><path d="M86 89l5 12 12 5-12 5-5 12-5-12-12-5 12-5z"/></g>
+<g filter="url(#s)">
+  <g transform="translate(256 182)">
+    <g fill="#ffc62f">
+      <rect x="-8" y="-112" width="16" height="48" rx="8"/>
+      <rect x="-8" y="64" width="16" height="48" rx="8"/>
+      <rect x="-112" y="-8" width="48" height="16" rx="8"/>
+      <rect x="64" y="-8" width="48" height="16" rx="8"/>
+      <rect x="-8" y="-112" width="16" height="48" rx="8" transform="rotate(45)"/>
+      <rect x="-8" y="-112" width="16" height="48" rx="8" transform="rotate(90)"/>
+      <rect x="-8" y="-112" width="16" height="48" rx="8" transform="rotate(135)"/>
+      <rect x="-8" y="-112" width="16" height="48" rx="8" transform="rotate(225)"/>
+      <rect x="-8" y="-112" width="16" height="48" rx="8" transform="rotate(315)"/>
+    </g>
+    <circle r="72" fill="url(#sun)"/>
+    <circle cx="-29" cy="-6" r="6" fill="#663a24"/><circle cx="29" cy="-6" r="6" fill="#663a24"/>
+    <circle cx="-42" cy="16" r="10" fill="#ff7aa7" opacity=".75"/><circle cx="42" cy="16" r="10" fill="#ff7aa7" opacity=".75"/>
+    <path d="M-27 17q27 32 54 0" fill="none" stroke="#663a24" stroke-width="7" stroke-linecap="round"/>
+  </g>
+  <path d="M116 267q140-33 280 0" fill="none" stroke="#169ed0" stroke-width="10" stroke-linecap="round"/>
+  <text x="256" y="351" text-anchor="middle" font-family="Arial Rounded MT Bold,Arial,sans-serif" font-size="57" font-weight="900">
+    <tspan fill="#18aee8">A</tspan><tspan fill="#ef3b47">C</tspan><tspan fill="#ffca2e">O</tspan><tspan fill="#f04b4e">N</tspan><tspan fill="#18a85b">C</tspan><tspan fill="#ffbf2d">H</tspan><tspan fill="#f28a2e">E</tspan><tspan fill="#f04149">G</tspan><tspan fill="#ffd02f">O</tspan>
+  </text>
+  <path d="M177 388q79 67 158 0" fill="none" stroke="#169ed0" stroke-width="9" stroke-linecap="round"/>
+  <path d="M180 389l-15-8 6 16M332 389l15-8-6 16" fill="#169ed0"/>
+  <g>
+    <path d="M77 207l7 14 16 2-12 11 3 16-14-8-14 8 3-16-12-11 16-2z" fill="#ffcc2c"/>
+    <path d="M109 177l7 14 16 2-12 11 3 16-14-8-14 8 3-16-12-11 16-2z" fill="#159ed5"/>
+    <path d="M92 237l7 14 16 2-12 11 3 16-14-8-14 8 3-16-12-11 16-2z" fill="#ef4050"/>
+    <path d="M435 207l7 14 16 2-12 11 3 16-14-8-14 8 3-16-12-11 16-2z" fill="#ffcc2c"/>
+    <path d="M403 177l7 14 16 2-12 11 3 16-14-8-14 8 3-16-12-11 16-2z" fill="#159ed5"/>
+    <path d="M420 237l7 14 16 2-12 11 3 16-14-8-14 8 3-16-12-11 16-2z" fill="#ef4050"/>
+  </g>
+</g>
+</svg>
